@@ -1,0 +1,13 @@
+<form [formGroup]="loginform" (ngSubmit)="onsubmit(loginform.value)">
+    <label>Name</label>
+    <input type="text" name="Name" class="form-control" formControlName="Name">
+    <span class="error" *ngIf="Name.invalid && Name.touched"> not valid</span><br>
+    <label>Username</label>
+    <input type="email" name="Username" class="form-control" formControlName="Username"><br>
+    <span class="error" *ngIf="Username.invalid && Username.touched"> not valid</span><br>
+
+    <label>password</label>
+    <input type="password" name="password" class="form-control" formControlName="password" ><br>
+    <span class="error" *ngIf="password.invalid && password.touched">password not valid</span><br>
+    <button type="submit" class="btn btn-info" [disabled]="loginform.invalid">Login</button>
+</form>
